@@ -9,7 +9,10 @@ import axios from "axios";
 
 // Set config defaults when creating the instance
 const instance = axios.create({
-  baseURL: "http://localhost:8000", // This can be replaced with env
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:8000"
+      : "https://my-json-server.typicode.com/gauravchaware/demodb", // This can be replaced with env, // This can be replaced with env
 });
 
 // Alter defaults after instance has been created
