@@ -44,7 +44,7 @@ const Users = () => {
       field && order ? `&_sort=${field}&_order=${order}` : ""
     }`;
     if (search) {
-      queryString = `${queryString}${`&searh=${search}`}`;
+      queryString = `${queryString}${`&q=${search}`}`;
     }
 
     getUsers(queryString)
